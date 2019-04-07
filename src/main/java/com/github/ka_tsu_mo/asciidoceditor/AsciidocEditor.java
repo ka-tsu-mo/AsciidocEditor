@@ -66,7 +66,7 @@ public class AsciidocEditor extends Application {
         stage = primaryStage;
         Parent root = fxmlLoader.load(getClass().getResourceAsStream("/asciidocEditor.fxml"));
         Scene scene = new Scene(root, 900, 600);
-        scene.getStylesheets().add("file://" + Paths.get(HOME, "stylesheets", "application.css").toAbsolutePath().toString());
+        scene.getStylesheets().add(Paths.get(HOME, "stylesheets", "application.css").toUri().toString());
         stage.setTitle("Asciidoc Editor");
         stage.setScene(scene);
         stage.show();
