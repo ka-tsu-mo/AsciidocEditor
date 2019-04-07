@@ -1,0 +1,88 @@
+.root {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.button-bar, .tab-header-background {
+    -fx-background-color: rgb(221, 221, 221);
+}
+
+.tab-pane {
+    -fx-tab-min-height: 32;
+    -fx-tab-max-height: 32;
+}
+
+.tab-header-area {
+    -fx-max-height: 32;
+    -fx-min-height: 32;
+    -fx-padding: 0;
+}
+
+.tab {
+    -fx-background-radius: 0;
+    -fx-padding: 0 8 0;
+}
+
+.tab-content-area {
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: rgb(221, 221, 221);
+}
+
+.setting-tab-pane .tab-content-area {
+    -fx-border-width: 0;
+}
+
+.setting-tab-pane .tab-down-button {
+    -fx-padding: 0;
+}
+
+.setting-tab-pane .tab-down-button .arrow {
+    -fx-padding: 0;
+}
+
+.setting-tab-pane {
+    -fx-padding: 0;
+    -fx-border-width: 0 0 0 10;
+    -fx-border-color: rgb(221, 221, 221);
+    -fx-min-width: 600;
+    -fx-max-width: 600;
+    -fx-tab-max-width: 300;
+    -fx-tab-min-width: 300;
+}
+
+.setting-tab-pane .tab-content-area {
+    -fx-border-width: 0 10 0 0;
+    -fx-border-color: rgb(221, 221, 221);
+}
+
+.setting-tab-pane .tab-header-area .tab-header-background,
+.setting-tab-pane .tab-header-area .headers-region .tab,
+.setting-tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-width: 0 0;
+    -fx-background-insets: 0;
+}
+
+.setting-tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-padding: 0;
+    -fx-alignment: CENTER;
+    -fx-pref-width: 300;
+}
+
+.setting-dialog .button-bar {
+    -fx-border-width: 0 10;
+    -fx-border-color: rgb(221, 221, 221);
+    -fx-background-color: rgb(244, 244, 244);
+}
+
+.mode-icon, #settingButton {
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#dddddd, #d7d7d7);
+}
+
+.mode-icon:disabled {
+    -fx-border-color: rgba(0, 0, 0, 0.7);
+}
+
+.mode-icon:hover {
+    -fx-background-color: #dcdcdc;
+}

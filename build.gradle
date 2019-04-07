@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
+sourceCompatibility = 12
+targetCompatibility = 12
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.asciidoctor:asciidoctorj:1.6.2'
+    implementation 'org.asciidoctor:asciidoctorj-diagram:1.5.12'
+    implementation 'org.jsoup:jsoup:1.11.3'
+}
+
+mainClassName = 'com.github.ka_tsu_mo.asciidoceditor.AppLauncher'
+
+javafx {
+    modules = ['javafx.fxml', 'javafx.web']
+    version = "12"
+}

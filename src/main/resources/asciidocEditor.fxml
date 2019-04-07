@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.ka_tsu_mo.asciidoceditor.AppController">
+   <center>
+      <GridPane fx:id="gridPane" alignment="CENTER" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="50.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="50.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+             <TabPane fx:id="editorPane" tabClosingPolicy="ALL_TABS" />
+            <VBox id="mainVBox" alignment="CENTER" GridPane.columnIndex="1">
+               <children>
+                  <ButtonBar buttonMinWidth="30.0" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="416.0">
+                    <buttons>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <ToggleButton fx:id="toggleViewerModeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass=".mode-icon">
+                                 <graphic>
+                                    <SVGPath content="M0,0.002v511.996h512v-18.071V0.002H0z M475.859,475.856H36.141v-364.43h439.718V475.856zM0,0.002v511.996h512v-18.071V0.002H0z M475.859,475.856H36.141v-364.43h439.718V475.856z" scaleX="0.05" scaleY="0.05" />
+                                 </graphic>
+                              </ToggleButton>
+                              <ToggleButton fx:id="toggleEditModeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" selected="true" styleClass=".mode-icon">
+                                 <graphic>
+                                    <SVGPath content="M384.164,290.844c9.641-13.688,12.75-30.953,8.469-47.141l-43.734-135.516H163.117l-43.75,135.516c-4.281,16.188-1.172,33.453,8.469,47.141l104.609,148.344v23.688c-6.359,5.031-10.422,12.813-10.422,21.563c0,15.219,12.328,27.563,27.563,27.563v-48.844v-6.281V264.266c-10.375-2.828-18-12.297-18-23.563c0-13.484,10.922-24.422,24.422-24.422c13.484,0,24.422,10.938,24.422,24.422c0,11.266-7.641,20.734-18,23.547v192.625v6.281V512c15.219,0,27.563-12.344,27.563-27.563c0-8.75-4.078-16.531-10.438-21.563v-23.688L384.164,290.844zM384.164,290.844c9.641-13.688,12.75-30.953,8.469-47.141l-43.734-135.516H163.117l-43.75,135.516c-4.281,16.188-1.172,33.453,8.469,47.141l104.609,148.344v23.688c-6.359,5.031-10.422,12.813-10.422,21.563c0,15.219,12.328,27.563,27.563,27.563v-48.844v-6.281V264.266c-10.375-2.828-18-12.297-18-23.563c0-13.484,10.922-24.422,24.422-24.422c13.484,0,24.422,10.938,24.422,24.422c0,11.266-7.641,20.734-18,23.547v192.625v6.281V512c15.219,0,27.563-12.344,27.563-27.563c0-8.75-4.078-16.531-10.438-21.563v-23.688L384.164,290.844z" scaleX="0.06" scaleY="0.06" styleClass=".mode-icon" />
+                                 </graphic>
+                              </ToggleButton>
+                            <Button fx:id="settingButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeSettings" prefHeight="30.0" prefWidth="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <graphic>
+                                    <SVGPath content="M497.569,215.166l-55.345-13.064c-4.032-13.946-9.495-27.27-16.376-39.732l29.85-48.303c4.57-7.397,3.452-16.946-2.688-23.086l-31.99-31.99c-6.129-6.129-15.678-7.248-23.076-2.678l-48.292,29.851c-12.462-6.882-25.785-12.344-39.732-16.377l-13.064-55.368C294.856,5.978,287.306,0,278.63,0h-45.237c-8.678,0-16.227,5.978-18.227,14.419l-13.064,55.368c-13.946,4.032-27.27,9.484-39.732,16.377l-48.303-29.872c-7.387-4.549-16.946-3.441-23.086,2.699L58.99,90.97c-6.13,6.14-7.248,15.709-2.689,23.087l29.862,48.313c-6.882,12.462-12.344,25.786-16.367,39.721l-55.378,13.065C5.978,217.165,0,224.704,0,233.392v45.226c0,8.678,5.978,16.237,14.419,18.226l55.378,13.065c4.032,13.946,9.485,27.259,16.367,39.71l-29.872,48.324c-4.549,7.398-3.441,16.957,2.699,23.098l31.979,31.979c6.14,6.14,15.709,7.257,23.087,2.688l48.323-29.872c12.463,6.882,25.786,12.344,39.722,16.366l13.064,55.366c2,8.463,9.549,14.431,18.227,14.431h45.237c8.677,0,16.226-5.968,18.226-14.431l13.064-55.366c13.937-4.021,27.259-9.484,39.712-16.366l48.312,29.861c7.398,4.57,16.947,3.452,23.087-2.688l31.989-31.99c6.13-6.129,7.248-15.688,2.678-23.087l-29.861-48.302c6.893-12.452,12.345-25.774,16.377-39.721l55.366-13.065c8.463-2.001,14.42-9.539,14.42-18.226v-45.238C512,224.714,506.032,217.165,497.569,215.166z M256.006,303.103c-26.002,0-47.098-21.097-47.098-47.108s21.097-47.108,47.098-47.108c26.011,0,47.108,21.097,47.108,47.108S282.017,303.103,256.006,303.103zM497.569,215.166l-55.345-13.064c-4.032-13.946-9.495-27.27-16.376-39.732l29.85-48.303c4.57-7.397,3.452-16.946-2.688-23.086l-31.99-31.99c-6.129-6.129-15.678-7.248-23.076-2.678l-48.292,29.851c-12.462-6.882-25.785-12.344-39.732-16.377l-13.064-55.368C294.856,5.978,287.306,0,278.63,0h-45.237c-8.678,0-16.227,5.978-18.227,14.419l-13.064,55.368c-13.946,4.032-27.27,9.484-39.732,16.377l-48.303-29.872c-7.387-4.549-16.946-3.441-23.086,2.699L58.99,90.97c-6.13,6.14-7.248,15.709-2.689,23.087l29.862,48.313c-6.882,12.462-12.344,25.786-16.367,39.721l-55.378,13.065C5.978,217.165,0,224.704,0,233.392v45.226c0,8.678,5.978,16.237,14.419,18.226l55.378,13.065c4.032,13.946,9.485,27.259,16.367,39.71l-29.872,48.324c-4.549,7.398-3.441,16.957,2.699,23.098l31.979,31.979c6.14,6.14,15.709,7.257,23.087,2.688l48.323-29.872c12.463,6.882,25.786,12.344,39.722,16.366l13.064,55.366c2,8.463,9.549,14.431,18.227,14.431h45.237c8.677,0,16.226-5.968,18.226-14.431l13.064-55.366c13.937-4.021,27.259-9.484,39.712-16.366l48.312,29.861c7.398,4.57,16.947,3.452,23.087-2.688l31.989-31.99c6.13-6.129,7.248-15.688,2.678-23.087l-29.861-48.302c6.893-12.452,12.345-25.774,16.377-39.721l55.366-13.065c8.463-2.001,14.42-9.539,14.42-18.226v-45.238C512,224.714,506.032,217.165,497.569,215.166z M256.006,303.103c-26.002,0-47.098-21.097-47.098-47.108s21.097-47.108,47.098-47.108c26.011,0,47.108,21.097,47.108,47.108S282.017,303.103,256.006,303.103z" scaleX="0.05" scaleY="0.05" styleClass="setting-button-icon" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                    </buttons>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ButtonBar>
+                   <WebView fx:id="viewer" minHeight="-1.0" minWidth="-1.0" prefHeight="398.0" prefWidth="416.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="menu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="makeFile" mnemonicParsing="false" onAction="#newFile" text="New">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#openFile" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="saveAs" mnemonicParsing="false" onAction="#saveAs" text="Save as...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="save" mnemonicParsing="false" onAction="#save" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="exportAsHTML" mnemonicParsing="false" onAction="#exportAsHTML" text="Export as HTML" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

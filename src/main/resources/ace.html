@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Ace Editor</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="editor"></div>
+<script src="ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+
+    editor.setOptions({
+        mode: "ace/mode/asciidoc",
+        animatedScroll: true,
+        theme: localStorage.getItem("aceTheme"),
+        wrap: localStorage.getItem("wrap") === "true",
+        showGutter: localStorage.getItem("showGutter") === "true",
+        useSoftTabs: localStorage.getItem("useSoftTabs") === "true",
+        highlightActiveLine: localStorage.getItem("highlightActiveLine") === "true",
+        scrollSpeed: Number(localStorage.getItem("scrollSpeed")),
+        tabSize: Number(localStorage.getItem("tabSize")),
+        fontSize: Number(localStorage.getItem("fontSize"))
+    });
+    if (localStorage.getItem("keyBoardHandler") === "ace/keyboard/ace") {
+        editor.setKeyboardHandler(null);
+    } else {
+        editor.setKeyboardHandler(localStorage.getItem("keyBoardHandler"));
+    }
+
+    editor.getSession().on('change', function(e){
+       var adocData = editor.getSession().getDocument().getValue();
+       if (!convertService.isRunning()) {
+           convertService.reset();
+           convertService.restart(adocData);
+       }
+    });
+    window.addEventListener('storage', function (ev) {
+        editor.setOptions({
+            theme: localStorage.getItem("aceTheme"),
+            wrap: localStorage.getItem("wrap") === "true",
+            showGutter: localStorage.getItem("showGutter") === "true",
+            useSoftTabs: localStorage.getItem("useSoftTabs") === "true",
+            highlightActiveLine: localStorage.getItem("highlightActiveLine") === "true",
+            scrollSpeed: Number(localStorage.getItem("scrollSpeed")),
+            tabSize: Number(localStorage.getItem("tabSize")),
+            fontSize: Number(localStorage.getItem("fontSize"))
+        });
+        if (localStorage.getItem("keyBoardHandler") === "ace/keyboard/ace") {
+            editor.setKeyboardHandler(null);
+        } else {
+            editor.setKeyboardHandler(localStorage.getItem("keyBoardHandler"));
+        }
+    });
+
+    function dispatchStorageEvent() {
+        window.dispatchEvent(new Event('storage'));
+    }
+</script>
+</body>
+</html>

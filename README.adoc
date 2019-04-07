@@ -1,0 +1,21 @@
+= AsciidocEditor
+
+This is a simple AsciiDoc editor and previewer
+
+== Prerequisite
+You will need https://jdk.java.net/12/[OpenJDK 12] and https://www.graphviz.org/[Graphviz].
+
+== Building and Running
+....
+./gradlew build
+....
+
+....
+./gradlew run
+....
+
+== Used Technology
+* https://openjfx.io/[JavaFX]
+* https://ace.c9.io/[Ace Editor]
+* https://asciidoctor.org/docs/asciidoctorj/[asciidoctorJ](licensed under the https://www.apache.org/licenses/LICENSE-2.0.txt[Apache License 2.0])
+* https://github.com/asciidoctor/asciidoctorj-diagram[asciidoctorj-diagram]
