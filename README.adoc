@@ -14,8 +14,8 @@ You will need https://jdk.java.net/12/[OpenJDK 12] and https://www.graphviz.org/
 ./gradlew run
 ....
 
-== Used Technology
+== Used Technologies
 * https://openjfx.io/[JavaFX]
 * https://ace.c9.io/[Ace Editor]
-* https://asciidoctor.org/docs/asciidoctorj/[asciidoctorJ](licensed under the https://www.apache.org/licenses/LICENSE-2.0.txt[Apache License 2.0])
+* https://asciidoctor.org/docs/asciidoctorj/[asciidoctorJ](licensed under the https://github.com/asciidoctor/asciidoctorj/blob/master/LICENSE.txt[Apache License 2.0])
 * https://github.com/asciidoctor/asciidoctorj-diagram[asciidoctorj-diagram]
